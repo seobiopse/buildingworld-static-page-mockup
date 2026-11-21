@@ -14,7 +14,7 @@ HTML mockups and a dev handover for BuildingWorld category and price pages (in-h
   - Price range page: `ac-price-range-page.html`
   - Price capacity page: `ac-price-capacity-page.html`
   - Price type page: `ac-price-type-page.html`
-  - Price hub: `price-hub-page.html` (existing hub mockup, 2026-11-20)
+  - Price hub, one switcher on all three: `price-hub-page.html` (Pan-India Prices), `price-hub-city-page.html` (In My City), `price-hub-brand-page.html` (Brand Prices)
 - `docs/` URL structure and the Slack message for dev.
 
 ## Notes

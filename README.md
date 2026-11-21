@@ -9,12 +9,12 @@ HTML mockups and a dev handover for BuildingWorld category and price pages (in-h
 
 ## Folders
 - `mockups/` working HTML pages. Tick the box at the bottom right to show data tokens.
-  - Category pages: `ac-category-page.html`, `wooden-floor-tile-category-page.html`
-  - Price pages: `ac-price-page.html`, `floor-tile-price-page.html`
-  - Price range pages: `ac-price-range-page.html`, `floor-tile-under-50-price-range-page.html`
+  - Category page: `ac-category-page.html`
+  - Price page: `ac-price-page.html`
+  - Price range page: `ac-price-range-page.html`
   - Price hub: `price-hub-page.html` (existing hub mockup, 2026-11-20)
 - `docs/` URL structure and the Slack message for dev.
 
 ## Notes
-- Floor Tile prices and counts are sample values. AC data was read from the live listing on 2026-11-21.
+- AC data was read from the live listing on 2026-11-21.
 - The dev toggle panel in each mockup is for review only and is removed before shipping.

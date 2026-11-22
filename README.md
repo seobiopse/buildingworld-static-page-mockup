@@ -14,6 +14,7 @@ HTML mockups and a dev handover for BuildingWorld category and price pages (in-h
   - Category pages: `ac-category-page.html`, `ac-category-city-page.html` (Chennai)
   - Price pages: `ac-price-page.html`, `ac-price-range-page.html`, `ac-price-type-page.html`, `ac-price-city-page.html` (Chennai)
   - Price hub (one page, three views by toggle): `price-hub-page.html`
+  - Idea page L2 (in-house template, larger images): `idea-page.html`
 - `docs/` URL structure and the Slack message for dev.
 
 ## Notes

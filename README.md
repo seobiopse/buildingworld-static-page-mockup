@@ -4,6 +4,7 @@ HTML mockups and a dev handover for BuildingWorld category and price pages (in-h
 
 ## Start here
 - `index.html` links to everything.
+- `handover/release-note.html` a one-page dev note: what to build, the mockups, the rules, the open decisions.
 - `handover/dev-handover.html` one sheet: the mockup URLs on top, then every page from the top-level category pages to the price pages and how they link.
 - `handover/content-template.html` Google Docs style content templates with copy buttons.
 

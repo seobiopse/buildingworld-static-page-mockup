@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Dev release note - BuildingWorld static pages</title>
+<style>body{margin:0;background:#f6f8fa;color:#1f2328;font:16px/1.55 system-ui,Arial,sans-serif}main{max-width:820px;margin:0 auto;padding:32px 16px 64px}
+h1{font-size:26px;margin:0 0 4px}p.sub{margin:0 0 24px;color:#59636e}h2{font-size:17px;margin:28px 0 8px;padding-bottom:4px;border-bottom:1px solid #d1d9e0}
+ul,ol{margin:6px 0 0;padding-left:22px}li{margin:4px 0}li span{display:block;color:#59636e;font-size:13px;word-break:break-all}a{color:#0f4c81}code{background:#eef1f4;border-radius:4px;padding:0 4px;font-size:14px}
+.box{background:#fff;border:1px solid #d1d9e0;border-radius:10px;padding:14px 18px}</style></head><body><main>
+<h1>Dev release note: static category and price pages</h1>
+<p class="sub">2026-11-22. In-house. Read this first, then open the mockups.</p>
+<h2>What to build</h2>
+<div class="box"><ul>
+<li>One base template, rendered from data. The product cards are the same on every page. The strip above the cards and the strips after the View All button change by page type.</li>
+<li>Page types: category pages (L2 and L3), price pages (national, city, brand, brand + city, range, capacity, type) and the price hub with three views.</li>
+<li>Everything that changes per category is a <code>{{token}}</code>. Tick the box at the bottom right of any mockup to see them (purple). Orange blocks are the same on every page.</li></ul></div>
+<h2>Mockups</h2><ul><li><a href="../mockups/ac-category-page.html">Category page (AC)</a> <span>https://seobiopse.github.io/buildingworld-static-page-mockup/mockups/ac-category-page.html</span></li><li><a href="../mockups/ac-price-page.html">Price page, national (AC)</a> <span>https://seobiopse.github.io/buildingworld-static-page-mockup/mockups/ac-price-page.html</span></li><li><a href="../mockups/ac-price-range-page.html">Price range page (Under ₹70,000)</a> <span>https://seobiopse.github.io/buildingworld-static-page-mockup/mockups/ac-price-range-page.html</span></li><li><a href="../mockups/ac-price-capacity-page.html">Price capacity page (1.5 Ton)</a> <span>https://seobiopse.github.io/buildingworld-static-page-mockup/mockups/ac-price-capacity-page.html</span></li><li><a href="../mockups/ac-price-type-page.html">Price type page (Split AC)</a> <span>https://seobiopse.github.io/buildingworld-static-page-mockup/mockups/ac-price-type-page.html</span></li><li><a href="../mockups/price-hub-page.html">Price hub: Pan-India Prices</a> <span>https://seobiopse.github.io/buildingworld-static-page-mockup/mockups/price-hub-page.html</span></li><li><a href="../mockups/price-hub-city-page.html">Price hub: In My City</a> <span>https://seobiopse.github.io/buildingworld-static-page-mockup/mockups/price-hub-city-page.html</span></li><li><a href="../mockups/price-hub-brand-page.html">Price hub: Brand Prices</a> <span>https://seobiopse.github.io/buildingworld-static-page-mockup/mockups/price-hub-brand-page.html</span></li></ul>
+<h2>Rules</h2><ol>
+<li><b>Category pages do not target price.</b> Price pages own the price keyword. Each page has its own self-canonical.</li>
+<li><b>Build the template for every category, publish only those that pass the size rule.</b> Start with at least 30 products. Pages below the limit are <code>noindex</code>, left out of the sitemap and not linked from strips. They switch on when they pass.</li>
+<li><b>Breadcrumbs:</b> products Home &rsaquo; Products &rsaquo; L1 &rsaquo; L2 &rsaquo; page; price pages Home &rsaquo; Price &rsaquo; product (&rsaquo; brand and/or city, or range). The last crumb is the page H1. The visible crumbs and the BreadcrumbList schema must match.</li>
+<li><b>Links are real links in the HTML.</b> Link only to pages that exist. Do not link filtered app URLs (<code>?l3_category_ids=...</code>).</li>
+<li><b>Meta and social tags</b> (title about 60 characters, description about 155, canonical, robots, Open Graph, Twitter) and schema (BreadcrumbList, CollectionPage with an ItemList, FAQPage) are in the handover. No Product markup on listing pages.</li>
+<li><b>Size:</b> 24 product cards on category pages, 12 on price pages. Keep each page's HTML under 2 MB.</li>
+<li><b>Hub switcher:</b> one switcher in the same place on all three hub pages (centred under the site header, above the hero). Do not repeat it further down.</li></ol>
+<h2>Where the details are</h2><ul>
+<li><a href="dev-handover.html">dev-handover.html</a>: every page type, URL pattern, meta, breadcrumb and links, on one sheet.</li>
+<li><a href="content-template.html">content-template.html</a>: copy templates (titles, meta, H1, intros, FAQs) with copy buttons.</li>
+<li><a href="../docs/URL_Structure.md">docs/URL_Structure.md</a>: URL patterns and the category tree notes.</li></ul>
+<h2>Decisions still open</h2><ul>
+<li>City and brand hub views (<code>/price/cities/</code>, <code>/price/brands/</code>): one click or two clicks from the hub.</li>
+<li>Category + city page URL, and which cities qualify (real dealers only).</li>
+<li>Range, capacity and type price pages are new page types: check search demand and product counts first.</li>
+<li>Static L1 and L2 URL pattern; the final domain (.ai or .com); 13 slugs marked "confirm" in the Dev Handover.</li></ul>
+</main></body></html>

@@ -1,19 +1,18 @@
 # BuildingWorld static page mockups
 
-HTML mockups and a dev handover for BuildingWorld category and price pages (in-house). One base template, two page types.
+HTML mockups and a dev handover for BuildingWorld category and price pages (in-house). One base template. L1 categories stay in the application; L2 and L3 are static pages. Domain: https://www.buildingworld.ai
 
 ## Start here
 - `index.html` links to everything.
-- `handover/dev-handover.html` one sheet: the mockup URLs on top, then every page from the top-level category pages to the price pages and how they link.
+- `handover/release-note.html` a one-page dev note: what to build, H1 formats, breadcrumbs, links, meta and social tags, structured data, publishing rule, open decisions.
+- `handover/dev-handover.html` one sheet: the mockup URLs on top, then every page with its URL, H1, breadcrumb (with URLs) and schema types, how the pages link, and the dynamic meta, Open Graph and Twitter tags.
 - `handover/content-template.html` Google Docs style content templates with copy buttons.
+- `handover/structured-data-reference.html` schema types per page and the Idea page as the reference (a saved copy is in `handover/reference/`).
 
 ## Folders
 - `mockups/` working HTML pages. Tick the box at the bottom right to show data tokens.
   - Category page: `ac-category-page.html`
-  - Price page: `ac-price-page.html`
-  - Price range page: `ac-price-range-page.html`
-  - Price capacity page: `ac-price-capacity-page.html`
-  - Price type page: `ac-price-type-page.html`
+  - Price pages: `ac-price-page.html`, `ac-price-range-page.html`, `ac-price-type-page.html`
   - Price hub (one page, three views by toggle): `price-hub-page.html`
 - `docs/` URL structure and the Slack message for dev.
 

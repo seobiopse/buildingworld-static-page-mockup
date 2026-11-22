@@ -1,22 +1,15 @@
 # BuildingWorld static page mockups
 
-HTML mockups and a dev handover for BuildingWorld category and price pages (in-house). One base template. L1 categories stay in the application; L2 and L3 are static pages. Domain: https://www.buildingworld.ai
-
-## Start here
-- `index.html` links to everything.
-- `handover/release-note.html` a one-page dev note: what to build, H1 formats, breadcrumbs, links, meta and social tags, structured data, publishing rule, open decisions.
-- `handover/dev-handover.html` one sheet: the mockup URLs on top, then every page with its URL, H1, breadcrumb (with URLs) and schema types, how the pages link, and the dynamic meta, Open Graph and Twitter tags.
-- `handover/content-template.html` Google Docs style content templates with copy buttons.
-- `handover/structured-data-reference.html` schema types per page and the Idea page as the reference (a saved copy is in `handover/reference/`).
+HTML mockups and a dev handover for BuildingWorld category and price pages (in-house). One base template, two page types.
 
 ## Folders
-- `mockups/` working HTML pages. Tick the box at the bottom right to show data tokens.
-  - Category pages: `ac-category-page.html`, `ac-category-city-page.html` (Chennai)
-  - Price pages: `ac-price-page.html`, `ac-price-range-page.html`, `ac-price-type-page.html`, `ac-price-city-page.html` (Chennai)
-  - Price hub (one page, three views by toggle): `price-hub-page.html`
-  - Idea page L2 (in-house template, larger images): `idea-page.html`
+- `mockups/` working HTML pages. Open in Chrome (needs internet for Tailwind and fonts). Tick the box at the bottom right to show data tokens.
+  - `wooden-floor-tile-category-page.html`, `ac-category-page.html` (category pages)
+  - `floor-tile-price-page.html`, `ac-price-page.html`, `floor-tile-under-50-price-range-page.html` (price pages)
+- `handover/dev-handover.html` Excel-style sheets: page types, overlap rules, elements, tokens, meta and social tags, schema, links, open items.
+- `handover/content-template.html` Google Docs style content templates with copy buttons.
 - `docs/` URL structure and the Slack message for dev.
 
 ## Notes
-- AC data was read from the live listing on 2026-11-21.
+- Floor Tile prices and counts in the mockups are sample values. AC data was read from the live listing on 2026-11-21.
 - The dev toggle panel in each mockup is for review only and is removed before shipping.

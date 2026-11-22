@@ -11,5 +11,5 @@ HTML mockups and a dev handover for BuildingWorld category and price pages (in-h
 - `docs/` URL structure and the Slack message for dev.
 
 ## Notes
-- Floor Tile prices and counts in the mockups are sample values. AC data was read from the live listing on 2026-11-21.
+- Floor Tile prices and counts in the mockups are sample values. AC data was read from the live listing on 2026-11-22.
 - The dev toggle panel in each mockup is for review only and is removed before shipping.

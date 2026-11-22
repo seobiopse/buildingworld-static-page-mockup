@@ -1,7 +1,7 @@
 # BuildingWorld static page URL structure
 
 Domain: `https://www.buildingworld.ai` (all URLs below are paths on it).
-Source: live site (Chrome check, 2026-11-21) and `Brand & Price Finalized Version .xlsx`, `Static Price Pages - Review for Approval.xlsx`, `25 Product Static Pages.txt`.
+Source: live site (Chrome check, 2026-11-22) and `Brand & Price Finalized Version .xlsx`, `Static Price Pages - Review for Approval.xlsx`, `25 Product Static Pages.txt`.
 
 ## 1. Patterns
 
@@ -50,4 +50,4 @@ L2 list (live sidebar): Floor Tile, Wall Tile, Floor and Wall Tile, Natural Ston
 
 - The 25 live static pages use names such as `vitrified-tiles.html` (no "floor"). Confirm whether the Floor Tile L3 pages follow `vitrified-floor-tiles.html` or the shorter live names, so two pages do not compete for the same keyword.
 - Pages with 4 to 30 products (Industrial, Cement) need a minimum-product rule before they get a static page or `index`.
-- Price pages: 532 in `Dev Handover - Price Pages-2026-11-19.xlsx` (76 national, 197 city, 215 brand, 44 brand + city), confirmed 2026-11-21. 13 slugs are marked "confirm".
+- Price pages: 532 in `Dev Handover - Price Pages-2026-11-19.xlsx` (76 national, 197 city, 215 brand, 44 brand + city), confirmed 2026-11-22. 13 slugs are marked "confirm".

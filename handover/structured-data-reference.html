@@ -1,0 +1,335 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Structured data reference</title><style>body{margin:0;background:#f6f8fa;color:#1f2328;font:16px/1.55 system-ui,Arial,sans-serif}main{max-width:980px;margin:0 auto;padding:32px 16px 72px}
+h1{font-size:26px;margin:0 0 4px}p.sub{margin:0 0 20px;color:#59636e}h2{font-size:18px;margin:34px 0 8px;padding-bottom:4px;border-bottom:1px solid #d1d9e0}h3{font-size:15px;margin:18px 0 6px}
+ul,ol{margin:6px 0 0;padding-left:22px}li{margin:4px 0}li span.u{display:block;color:#59636e;font-size:13px;word-break:break-all}a{color:#0f4c81}
+code{background:#eef1f4;border-radius:4px;padding:0 4px;font-size:13.5px}code.tk{background:#ede9fe;border:1px solid #c4b5fd;color:#4c1d95;white-space:nowrap}
+.box{background:#fff;border:1px solid #d1d9e0;border-radius:10px;padding:12px 18px}table{border-collapse:collapse;width:100%;background:#fff;font-size:14px;margin-top:6px}th,td{border:1px solid #d1d9e0;padding:6px 9px;text-align:left;vertical-align:top}th{background:#eef1f4}
+pre{background:#0d1117;color:#e6edf3;border-radius:10px;padding:14px 16px;overflow:auto;font-size:12.5px;line-height:1.5;margin:6px 0 0}.n{color:#59636e;font-size:13px}</style></head><body><main><h1>Structured data reference</h1><p class="sub">2026-11-22. JSON-LD examples taken from the mockups.</p><div class="box"><b>Use on every page:</b> BreadcrumbList, CollectionPage (with an ItemList of the links on the page) and FAQPage. Put them in one <code>&lt;script type="application/ld+json"&gt;</code> array in the head. Validate each page type with Google's Rich Results Test.</div>
+<h2>Rules</h2><ol><li>Absolute URLs everywhere (<code>https://www.buildingworld.ai/...</code>).</li><li>The BreadcrumbList matches the visible breadcrumb: same names, same order, same URLs. The last item is the page itself.</li><li>The FAQPage text matches the visible FAQs word for word (links removed). Do not mark up FAQs that are not on the page.</li><li><code>dateModified</code> is the "last updated" date shown on the page.</li><li>The ItemList lists the links on the page (products, or price pages on the hub): <code>position</code>, <code>name</code>, <code>url</code>. <code>numberOfItems</code> is the real count.</li><li>No Product, Offer or AggregateOffer on listing pages. Prices stay in the visible text.</li><li>FAQ rich results are shown only for some sites. The markup is still correct and helps search and answer engines.</li></ol>
+<h2>Category page (AC)</h2><p class="n">From <code>mockups/ac-category-page.html</code>, shortened to two list items and two FAQs.</p><pre>[
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+    &quot;itemListElement&quot;: [
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 1,
+        &quot;name&quot;: &quot;Home&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 2,
+        &quot;name&quot;: &quot;Products&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/products/categories&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 3,
+        &quot;name&quot;: &quot;Heating, Ventilation and Air Conditioning&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/products/categories/heating-ventilation-and-air-conditioning&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 4,
+        &quot;name&quot;: &quot;Heating, Cooling and Air Quality&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/product/heating-ventilation-and-air-conditioning/heating-cooling-and-air-quality.html&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 5,
+        &quot;name&quot;: &quot;Air Conditioners&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/product/heating-ventilation-and-air-conditioning/air-conditioners.html&quot;
+      }
+    ]
+  },
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;CollectionPage&quot;,
+    &quot;@id&quot;: &quot;https://www.buildingworld.ai/product/heating-ventilation-and-air-conditioning/air-conditioners.html#page&quot;,
+    &quot;url&quot;: &quot;https://www.buildingworld.ai/product/heating-ventilation-and-air-conditioning/air-conditioners.html&quot;,
+    &quot;name&quot;: &quot;Air Conditioner&quot;,
+    &quot;description&quot;: &quot;Shop air conditioners online in India. Compare 198 products from 18 brands, including Voltas, Godrej Enterprises and LG. Message brands directly for quotes.&quot;,
+    &quot;inLanguage&quot;: &quot;en-IN&quot;,
+    &quot;dateModified&quot;: &quot;2026-11-21&quot;,
+    &quot;isPartOf&quot;: {
+      &quot;@type&quot;: &quot;WebSite&quot;,
+      &quot;name&quot;: &quot;BuildingWorld&quot;,
+      &quot;url&quot;: &quot;https://www.buildingworld.ai/&quot;
+    },
+    &quot;relatedLink&quot;: [
+      &quot;https://www.buildingworld.ai/price/ac&quot;
+    ],
+    &quot;mainEntity&quot;: {
+      &quot;@type&quot;: &quot;ItemList&quot;,
+      &quot;name&quot;: &quot;Air Conditioner&quot;,
+      &quot;numberOfItems&quot;: 20,
+      &quot;itemListElement&quot;: [
+        {
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 1,
+          &quot;name&quot;: &quot;Voltas SmartAir Inverter AC, 1 Ton, 3 Star - 123V Vertis Emerald&quot;,
+          &quot;url&quot;: &quot;https://www.buildingworld.ai/products/pgyawx-voltas-smartair-inverter-ac-1-ton-3-star-123v-vertis-emerald&quot;,
+          &quot;image&quot;: &quot;https://media.buildingworld.ai/images/product-bulk-upload-image/84b686fdc16e4d4dbb1f7810b7f6bce2.webp&quot;
+        },
+        {
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 2,
+          &quot;name&quot;: &quot;Voltas SmartAir Inverter AC, 1.5 Ton, 3 Star - 183V Vertis Smart Elite Gold With IoT&quot;,
+          &quot;url&quot;: &quot;https://www.buildingworld.ai/products/9frl0s-voltas-smartair-inverter-ac-15-ton-3-star-183v-vertis-smart-elite-gold-with-iot&quot;,
+          &quot;image&quot;: &quot;https://media.buildingworld.ai/Images/products/27a434d84fc1d11b.webp&quot;
+        }
+      ],
+      &quot;numberOfItems_note&quot;: &quot;numberOfItems is the real count (20 here); one ListItem per link on the page&quot;
+    }
+  },
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;FAQPage&quot;,
+    &quot;mainEntity&quot;: [
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;Which brands sell air conditioners?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;The brands that sell air conditioners on BuildingWorld number 18, led by Voltas (43 products), Godrej Enterprises (42) and LG (30).&quot;
+        }
+      },
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;Which air conditioner type is the most popular?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;The most popular air conditioner type on BuildingWorld is Split AC, with 130 of 198 products, followed by Window AC (23) and Cassette AC (21).&quot;
+        }
+      }
+    ]
+  }
+]</pre>
+<h2>Price page (AC, national)</h2><p class="n">Same three blocks. The breadcrumb is Home, Price, page. From <code>mockups/ac-price-page.html</code>.</p><pre>[
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+    &quot;itemListElement&quot;: [
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 1,
+        &quot;name&quot;: &quot;Home&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 2,
+        &quot;name&quot;: &quot;Price&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/price/&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 3,
+        &quot;name&quot;: &quot;AC Price in India&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/price/ac&quot;
+      }
+    ]
+  },
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;CollectionPage&quot;,
+    &quot;@id&quot;: &quot;https://www.buildingworld.ai/price/ac#page&quot;,
+    &quot;url&quot;: &quot;https://www.buildingworld.ai/price/ac&quot;,
+    &quot;name&quot;: &quot;AC Price in India&quot;,
+    &quot;description&quot;: &quot;AC price in India starts at ₹12,000. Compare 198 air conditioners by type, capacity and brand on BuildingWorld.&quot;,
+    &quot;inLanguage&quot;: &quot;en-IN&quot;,
+    &quot;dateModified&quot;: &quot;2026-11-21&quot;,
+    &quot;isPartOf&quot;: {
+      &quot;@type&quot;: &quot;WebSite&quot;,
+      &quot;name&quot;: &quot;BuildingWorld&quot;,
+      &quot;url&quot;: &quot;https://www.buildingworld.ai/&quot;
+    },
+    &quot;about&quot;: {
+      &quot;@type&quot;: &quot;Thing&quot;,
+      &quot;name&quot;: &quot;Air Conditioner&quot;
+    },
+    &quot;mainEntity&quot;: {
+      &quot;@type&quot;: &quot;ItemList&quot;,
+      &quot;name&quot;: &quot;Lowest priced air conditioners&quot;,
+      &quot;numberOfItems&quot;: 8,
+      &quot;itemListOrder&quot;: &quot;https://schema.org/ItemListOrderAscending&quot;,
+      &quot;itemListElement&quot;: [
+        {
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 1,
+          &quot;name&quot;: &quot;Godrej Split AC 1.5T SIC 18ATC3 PYB WVBL&quot;,
+          &quot;url&quot;: &quot;https://www.buildingworld.ai/products/dm3qed-godrej-split-ac-15t-sic-18atc3-pyb-wvbl&quot;
+        },
+        {
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 2,
+          &quot;name&quot;: &quot;Voltas Adjustable Inverter Split AC, 1 Ton, 3 Star - 123V Vectra Elegant&quot;,
+          &quot;url&quot;: &quot;https://www.buildingworld.ai/products/p1ozst-voltas-adjustable-inverter-split-ac-1-ton-3-star-123v-vectra-elegant&quot;
+        }
+      ],
+      &quot;numberOfItems_note&quot;: &quot;numberOfItems is the real count (8 here); one ListItem per link on the page&quot;
+    }
+  },
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;FAQPage&quot;,
+    &quot;mainEntity&quot;: [
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;What is the AC price in India?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;The AC price in India starts at ₹12,000 on BuildingWorld, across 198 air conditioners. 103 have a fixed price, 78 show a price range and 17 are price on request.&quot;
+        }
+      },
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;What is the price of a 1.5 ton AC?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;The price of a 1.5 Ton AC on BuildingWorld covers 90 products, the most of any capacity. Open the capacity table above to compare 1 Ton, 2 Ton and 3 Ton ACs.&quot;
+        }
+      }
+    ]
+  }
+]</pre>
+<h2>Price range, capacity and type pages</h2><p class="n">Same as the price page, with the national price page as the parent in the breadcrumb. Example breadcrumb from <code>mockups/ac-price-range-page.html</code>:</p><pre>[
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+    &quot;itemListElement&quot;: [
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 1,
+        &quot;name&quot;: &quot;Home&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 2,
+        &quot;name&quot;: &quot;Price&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/price/&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 3,
+        &quot;name&quot;: &quot;AC Price in India&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/price/ac&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 4,
+        &quot;name&quot;: &quot;AC Under ₹70,000&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/price/ac-under-70000&quot;
+      }
+    ]
+  }
+]</pre>
+<h2>Price hub</h2><p class="n">One page at /price/. The ItemList lists the 76 national price pages. From <code>mockups/price-hub-page.html</code>.</p><pre>[
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+    &quot;itemListElement&quot;: [
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 1,
+        &quot;name&quot;: &quot;Home&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 2,
+        &quot;name&quot;: &quot;Price&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/price/&quot;
+      }
+    ]
+  },
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;CollectionPage&quot;,
+    &quot;@id&quot;: &quot;https://www.buildingworld.ai/price/#page&quot;,
+    &quot;url&quot;: &quot;https://www.buildingworld.ai/price/&quot;,
+    &quot;name&quot;: &quot;Product Prices in India&quot;,
+    &quot;description&quot;: &quot;Compare prices for 76 building and home products across India. Check the India-wide price, your city or a brand on BuildingWorld.&quot;,
+    &quot;inLanguage&quot;: &quot;en-IN&quot;,
+    &quot;dateModified&quot;: &quot;2026-11-21&quot;,
+    &quot;isPartOf&quot;: {
+      &quot;@type&quot;: &quot;WebSite&quot;,
+      &quot;name&quot;: &quot;BuildingWorld&quot;,
+      &quot;url&quot;: &quot;https://www.buildingworld.ai/&quot;
+    },
+    &quot;mainEntity&quot;: {
+      &quot;@type&quot;: &quot;ItemList&quot;,
+      &quot;numberOfItems&quot;: 76,
+      &quot;itemListElement&quot;: [
+        {
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 1,
+          &quot;name&quot;: &quot;Bathtub price&quot;,
+          &quot;url&quot;: &quot;https://www.buildingworld.ai/price/bathtub&quot;
+        },
+        {
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 2,
+          &quot;name&quot;: &quot;Commode price&quot;,
+          &quot;url&quot;: &quot;https://www.buildingworld.ai/price/commode&quot;
+        }
+      ],
+      &quot;numberOfItems_note&quot;: &quot;numberOfItems is the real count (76 here); one ListItem per link on the page&quot;
+    }
+  },
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;FAQPage&quot;,
+    &quot;mainEntity&quot;: [
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;Are the prices the same in every city?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;Not always. Prices can differ by city because of local dealers, freight and taxes. Use the In My City view to check your own city.&quot;
+        }
+      },
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;How do I find the price of a product from a particular brand?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;Open the Brand Prices view, choose the brand and pick the product. Each brand page lists the products it covers.&quot;
+        }
+      }
+    ]
+  }
+]</pre>
+<h2>Idea page (live reference)</h2><p class="n">The live page <code>/idea/residential/modern-bedroom-designs.html</code> has these schema types: Organization, WebSite, CollectionPage, CreativeWork, ImageObject, BreadcrumbList, ItemList, FAQPage. Its breadcrumb:</p><pre>[
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+    &quot;itemListElement&quot;: [
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 1,
+        &quot;name&quot;: &quot;Home&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 2,
+        &quot;name&quot;: &quot;Ideas&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/ideas/categories&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 3,
+        &quot;name&quot;: &quot;Residential&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/ideas/categories/residential&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 4,
+        &quot;name&quot;: &quot;Modern Bedroom Designs&quot;,
+        &quot;item&quot;: &quot;https://www.buildingworld.ai/idea/residential/modern-bedroom-designs.html&quot;
+      }
+    ]
+  }
+]</pre></main></body></html>

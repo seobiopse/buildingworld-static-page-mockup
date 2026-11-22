@@ -4,7 +4,6 @@ HTML mockups and a dev handover for BuildingWorld category and price pages (in-h
 
 ## Start here
 - `index.html` links to everything.
-- `handover/release-note.html` a one-page dev note: what to build, the mockups, the rules, the open decisions.
 - `handover/dev-handover.html` one sheet: the mockup URLs on top, then every page from the top-level category pages to the price pages and how they link.
 - `handover/content-template.html` Google Docs style content templates with copy buttons.
 
@@ -15,7 +14,7 @@ HTML mockups and a dev handover for BuildingWorld category and price pages (in-h
   - Price range page: `ac-price-range-page.html`
   - Price capacity page: `ac-price-capacity-page.html`
   - Price type page: `ac-price-type-page.html`
-  - Price hub, one switcher on all three: `price-hub-page.html` (Pan-India Prices), `price-hub-city-page.html` (In My City), `price-hub-brand-page.html` (Brand Prices)
+  - Price hub (one page, three views by toggle): `price-hub-page.html`
 - `docs/` URL structure and the Slack message for dev.
 
 ## Notes
